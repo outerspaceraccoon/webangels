@@ -1,9 +1,152 @@
-/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
-   HTML content. To learn how to do something, just try searching Google for questions like
-   "how to change link color." */
+
 
 body {
-  background-color: white;
-  color: black;
-  font-family: Verdana;
+	border: 0px;
+	padding: 0px;
+	/* background-color: rgb(137, 43, 117); */
+	color: black;
+	/* font-family: Verdana;   */
+	/* background-image: url('gunbg.gif'), linear-gradient(to bottom, #ab1616, #e6f53c);
+	background-size: cover, cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-blend-mode: overlay; */
+
 }
+/* main page layout */
+.layout {
+	width: 100%;
+
+	display: grid;
+	grid:
+		"header" auto
+		"main" 1fr
+		"footer" auto
+		/ 1fr;
+	gap: 8px;
+}
+
+.header {
+	grid-area: header;
+}
+.main {
+	grid-area: main;
+}
+.footer {
+	grid-area: footer;
+}
+
+.header-layout {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-template-rows: 1fr;
+	grid-column-gap: 1rem;
+	grid-row-gap: 1rem;
+	background-color: rgb(137, 43, 117);
+}
+
+/* body sidebar content */
+.sidebar-layout {
+  width: 100%;
+  display: grid;
+  grid:
+    "sidebar main-content" 1fr 
+    / 1fr 2fr;
+  gap: 1rem;
+}
+
+.gap {
+	border: 3px solid #9d9c9c;
+}
+
+.sidebar { 
+	grid-area: sidebar; 
+	background-color: rgb(234, 48, 194);
+}
+.main-content { 
+	grid-area: main-content; 
+	background-color: rgb(215, 19, 120);
+}
+
+/* footer */
+.footer {	
+		width: 100%;
+		display: flex;
+		gap: 16px;
+		background-color: rgb(107, 48, 234);
+	}
+	.footer-grow { 
+		flex-grow: 1; 
+	}
+/*  */
+
+.background-gradient {
+	background-image: linear-gradient(85deg, #ff067a, #e696ec);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+
+/* animation */
+
+@keyframes gradient {
+	0% {
+		background-position: 10% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.gif-background {
+	background-image: url("gunbg.gif"),
+		linear-gradient(to bottom, #f0f0f0, #c0c0c0);
+	background-size: cover, cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-blend-mode: overlay;
+}
+
+/* grid */
+.container-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-gap: 20px;
+}
+
+.contenedor-grid-2 {
+	display: grid;
+	grid-template-rows: auto 1fr; /* La primera fila es auto y la segunda ocupa el resto */
+	grid-gap: 10px;
+}
+
+.items-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-gap: 10px;
+}
+/* flex */
+.container-flex {
+	display: flex;
+	flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+	flex-direction: column; /* Establecemos una dirección de columna por defecto */
+}
+.title {
+	flex: 0 1 auto; /* Ocupa el espacio necesario y no crece ni se encoge */
+}
+
+.items {
+	display: flex;
+	flex-wrap: wrap; /* Permite que los items se envuelvan si no hay espacio */
+	justify-content: space-between; /* Distribuye los items uniformemente */
+}
+
+.item {
+	flex: 1; /* Cada item ocupará el espacio disponible */
+	padding: 10px;
+}
+
