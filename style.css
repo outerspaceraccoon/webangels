@@ -225,8 +225,7 @@ h3 {
 	flex-direction: column; /* Establecemos una dirección de columna por defecto */
 	padding: 1rem;
 }
-.padding-1 {
-}
+
 .title {
 	flex: 0 1 auto; /* Ocupa el espacio necesario y no crece ni se encoge */
 }
@@ -319,7 +318,11 @@ h1 {
 			"main-content" 1fr
 			/ 1fr; /* Ambos elementos ocupan todo el ancho */
 	}
-}
+	.header-layout h1{
+		margin: 0 0 2rem 0;
+		font-size: 4rem;
+	}
+}  
 	
 	
 
@@ -342,7 +345,7 @@ h1 {
 			0 0 55px var(--neon-text-color), 0 0 70px var(--neon-text-color),
 			0 0 80px var(--neon-text-color);
 	} */
-}
+
 /* neon  */
 /* .neonText {
   animation: flicker 1.5s infinite alternate;
